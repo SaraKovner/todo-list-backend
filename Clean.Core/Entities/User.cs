@@ -1,0 +1,16 @@
+using System.Collections.Generic;
+
+namespace Clean.Core.Entities
+{
+    public class User
+    {
+        public int Id { get; set; }
+        public string Username { get; set; } = string.Empty;
+        public string Password { get; set; } = string.Empty;
+        public string Email { get; set; } = string.Empty;
+
+        // Navigation Properties
+        public ICollection<TaskItem> Tasks { get; set; } = new List<TaskItem>();
+        public ICollection<Category> Categories { get; set; } = new List<Category>();
+    }
+}
